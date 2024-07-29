@@ -55,12 +55,12 @@ export class userService {
     }
 
     public static async getUserByUsername(username: string): Promise<User | null> {
-        try {
-          return await UserRepository.findByUsername(username);
-        } catch (error: any) {
-          throw new Error(`Error finding user: ${error.message}`);
+        try{
+            return await UserRepository.findByUsername(username);
+        }catch (error: any){
+            throw new Error(`Error finding user: ${error.message}`);
         }
-      }
+    }
 
     public static async addUser(user: User) {
         try {
